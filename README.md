@@ -3,3 +3,6 @@ Personal web site for JavaScript at Canada College
 
 npm install -D vite
 npx vite
+
+
+https://vite.dev/guide/

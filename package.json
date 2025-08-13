@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "npx vite",
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint . --ext .js,.ts,.vue"
+  },
+  "devDependencies": {
+    "eslint": "^9.33.0",
+    "vite": "^7.1.2"
+  }
+}
+
+

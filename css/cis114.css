@@ -1,18 +1,85 @@
+
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+    
+    justify-content: center; /* Horizontally centers content */
+    /* align-items: center; */ /* Use this for vertical centering as well */
 }
 
+.welcome {
+    text-align: left;
+    margin: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    font-family: 'Schoolbell', arial, serif;
+}
+
+.topic {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.topic-item {
+    padding: 1px;
+    background-color: #f2f0f0;
+    border: 1px solid #ccc;
+    margin: 5px;
+    max-width: 200px;
+}
+
+.homework-header h1 {
+    color: orangered;
+    text-align: center;
+    
+}
+
+
+.homework-main-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; /* Horizontally centers content */
+}
+
+.homework-main-header-content {
+    margin: 1em;
+}
+
+nav ol {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start; /* Horizontally centers content */
+    /* align-items: center; */ /* Use this for vertical centering as well */
+}
+
+nav ol li {
+        
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 5px;    
+    list-style-type: none;
+}
+
+nav ol li a {
+    text-decoration: none;
+    color: rebeccapurple;
+    font-weight: bold;
+
+}   
+
 h1 {
+    margin: 0 auto;
     color: #333;
+    text-align: center;
 }
 
 h2 {
     color: #555;
+    text-align: center;
 }
 
 h3 {
     color: #777;
+    text-align: center;
 }

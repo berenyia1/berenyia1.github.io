@@ -109,3 +109,19 @@ h3 {
     flex-flow: column nowrap;
     justify-content: flex-start;
 }
+
+
+.form-grid {
+    display: grid;
+    grid-template-columns: auto 1fr; /* First column auto-sizes to content, second takes remaining space */
+    gap: 10px 15px; /* 10px row gap, 15px column gap */
+    align-items: center;
+    max-width: 500px;
+}
+
+.form-buttons {
+    grid-column: 1 / -1; /* Span across both columns */
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}

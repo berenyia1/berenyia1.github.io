@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework 2</title>
     <link rel="stylesheet" href="css/cis114.css">
-    <script src="js/cis114.js" defer></script>
+    <script src="js/homework2-002.js" defer></script>
 
     <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
 
@@ -49,6 +49,37 @@
 
     <main>
         Solution to Homework 2 - Part Two
+        <div class="homework-solution">
+
+            <div id="homework2-002">
+
+                <form onsubmit="{ formSubmitted(event); }" class="form-grid">
+
+                    <label for="number1">Enter first Integer:</label>
+                    <input type="number" id="number1" required step="1" style="width: 6em;" />
+
+                    <label for="number2">Enter second Integer:</label>
+                    <input type="number" id="number2" required step="1" style="width: 6em;" />
+
+                    <label for="number3">Enter third Integer:</label>
+                    <input type="number" id="number3" required step="1" style="width: 6em;" />
+
+                    <div class="form-buttons">
+                        <input type="submit" value="Enter" />
+                        <input type="reset" name="reset" value="Reset Form" onclick="showResults('');" />
+                    </div>
+
+                </form>
+
+                <p ></p>
+                <div id="results"  }">
+
+
+                </div>
+
+            </div>
+
+        </div>
 
     </main>
 

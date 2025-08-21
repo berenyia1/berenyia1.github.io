@@ -32,6 +32,14 @@ main {
     font-family: 'Schoolbell', arial, serif;
 }
 
+.homework-solution {
+    text-align: left;
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 5px solid #2e2cdc;
+}
+
 .topic {
     display: flex;
     flex-direction: column;
@@ -66,7 +74,8 @@ nav ol li a {
     color: rebeccapurple;
     font-weight: bold;
 
-}   
+}
+
 
 h1 {
     margin: 0 auto;

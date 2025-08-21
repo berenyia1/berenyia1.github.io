@@ -6,7 +6,24 @@ body {
     /* align-items: center; */ /* Use this for vertical centering as well */
 }
 
-.welcome {
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+}
+
+.homework-header h2 {
+    color: orangered;
+    text-align: center;
+}
+
+
+.homework-header-content {
+    margin: 1em;
+}
+
+main {
     text-align: left;
     margin: 20px;
     padding: 10px;
@@ -27,23 +44,6 @@ body {
     border: 1px solid #ccc;
     margin: 5px;
     max-width: 200px;
-}
-
-.homework-header h1 {
-    color: orangered;
-    text-align: center;
-    
-}
-
-
-.homework-main-header {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center; /* Horizontally centers content */
-}
-
-.homework-main-header-content {
-    margin: 1em;
 }
 
 nav ol {
@@ -82,4 +82,21 @@ h2 {
 h3 {
     color: #777;
     text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    border: 1px solid #ccc;
+    padding: 1em;
+}
+
+/* Add some padding inside the card container */
+.card-content {
+    margin: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
 }

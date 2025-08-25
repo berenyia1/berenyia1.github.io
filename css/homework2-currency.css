@@ -1,0 +1,27 @@
+﻿.currency-exchange-table {
+    border-collapse: collapse;
+}
+
+.currency-exchange-table th {
+    padding: 5px;
+    border: 3px solid #444;
+    text-align: center;
+}
+
+.currency-exchange-table td {
+    padding: 5px;
+    border: 3px solid #444;
+    text-align: left;
+    font: 100% Arial, sans-serif;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1em; /* Increases font size on focus */
+}
+
+input:focus {
+    background-color: yellow; /* Sets the background color to yellow on focus */
+    border: 3px red solid; /* Sets the border color to blue on focus */        
+}

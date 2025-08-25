@@ -8,10 +8,14 @@
     <meta name="author" content="Antal Berenyi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homework 2</title>
-    <link rel="stylesheet" href="css/cis114.css">
-    <script src="js/cis114.js" defer></script>
-
     <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/cis114.css">
+    <link rel="stylesheet" href="css/homework2-currency.css">
+    <script src="js/homework2-currency.js" defer></script>
+
+
 
 </head>
 <body>
@@ -46,7 +50,58 @@
 
     <main>
         Solution to Homework 2 - Extra Credit
+        <div class="homework-solution">
 
+            <div id="homework2-Extra">
+                
+
+                <table class="currency-exchange-table" >
+                    <caption><h2>Currency Converter</h2>  </caption>
+                    <tbody>
+                        
+                        <tr>
+                            <th style="width: 50%;" >Currency</th>
+                            <th style="width: 20%;" >Rate</th>
+                            <th style="width: 30%;" >Value</th>
+                        </tr>
+                        <tr>
+                            <td>Euro (EUR) </td>
+                            <td id="EURrate">0.92</td>
+                            <td id="EURvalue"></td>
+                        </tr>
+                        <tr>
+                            <td>Canadian Dollar (CAD)</td>
+                            <td id="CADrate">1.38</td>
+                            <td id="CADvalue"></td>
+                        </tr>
+                        <tr>
+                            <td>Hong Kong Dollar (HKD)</td>
+                            <td id="HKDrate">7.81</td>
+                            <td id="HKDvalue"></td>
+                        </tr>
+                        <tr>
+                            <td>Japanese Yen (JPY)</td>
+                            <td id="JPYrate">156.73</td>
+                            <td id="JPYvalue"></td>
+                        </tr>
+                        <tr>
+                            <td>Mexican Peso (MXN)</td>
+                            <td id="MXNrate">18.41</td>
+                            <td id="MXNvalue"></td>
+                        </tr>
+                        <tr>
+                            <td id="UDSamt" colspan="2"><strong>Enter Amount of U.S. Dollars (&#x0024;):</strong></td>
+                            <td >
+                                <input type="number" id="inputUSD" required style=" width: 6em;" min="0" oninput="amountChanged(event);"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+
+        </div>
     </main>
 
 

@@ -13,10 +13,11 @@ header {
     align-items: center; /* Vertically centers content */
 }
 
-.homework-header h2 {
+.homework-header h1, h2 {
     color: orangered;
     text-align: center;
 }
+
 
 
 .homework-header-content {

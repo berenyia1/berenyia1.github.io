@@ -62,7 +62,7 @@
 
 
                     <label for="item1">Item 1:</label>
-                    <input type="number" id="item1" required step="1" style="width: 6em;" />
+                    <input type="number" id="item1" required  step="1" style="width: 6em;" />
 
                     <label for="item2">Item 2:</label>
                     <input type="number" id="item2" required step="1" style="width: 6em;" />
@@ -70,16 +70,16 @@
                     <label for="item3">Item 3:</label>
                     <input type="number" id="item3" required step="1" style="width: 6em;" />
 
-                    <label for="item3">Item 4:</label>
-                    <input type="number" id="item3" required step="1" style="width: 6em;" />
+                    <label for="item4">Item 4:</label>
+                    <input type="number" id="item4" required step="1" style="width: 6em;" />
 
 
                     <div class="form-buttons">
                         <input type="submit" value="Submit" />
-                        <input type="reset" name="reset" value="Clear Form" onclick="showResults('');" />
+                        <input type="reset" name="reset" value="Clear Form" onclick="showError('');" />
                     </div>
 
-                    <div id="results" >ERROR</div>
+                    <div id="results" class="error-message"></div>
                     <div class="placeholder"></div>
                     <table>
                         <thead>

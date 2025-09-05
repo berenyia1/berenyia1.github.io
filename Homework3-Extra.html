@@ -12,7 +12,7 @@
 
 
     <link rel="stylesheet" href="css/cis114.css">
-    <script src="js/homework3-math.js" defer></script>
+    <script src="js/homework3-Extra.js" defer></script>
 
 
 
@@ -52,7 +52,39 @@
         <div class="homework-solution">
 
             <div id="homework3-Extra">
+                How much is X times Y?
+                <form onsubmit="{ formSubmitted(event); }">
 
+
+
+                    <label for="x_value">X</label>
+                    <input type="number" id="x_value" required style="width: 3em;" />
+                    *
+                    <label for="y_value">Y</label>
+                    <input type="number" id="y_value" required style="width: 3em;" />
+
+                    <label for="productXY">=</label>
+                    <input type="number" id="productXY" required style="width: 3em;" />
+
+
+
+                    <div class="form-buttons">
+                        <input type="submit" id="submitBtn" value="Submit" />
+                    </div>
+                    <div id="results" ></div>
+                    <div id="replay-buttons">
+                        Do you want to play again?
+                        <input type="button" value="Yes" onclick="setXAndY()"/>
+                        <input type="button" value="No" onclick="stopPlay()"/>
+
+
+                    </div>
+
+
+
+
+
+                </form>
 
 
             </div>

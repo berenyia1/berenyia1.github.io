@@ -27,9 +27,9 @@ function validateInput(itemsSold) {
 
     let items = 0;
 
-    try {
-        items = Number(itemsSold == "" ? "x" : itemsSold);
-    } catch {
+    items = Number(itemsSold == "" ? "x" : itemsSold);
+
+    if (isNaN(items)) {
         isValid = false;
     }
 

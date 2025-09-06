@@ -24,10 +24,9 @@ function validateInput(score, criterion="criterion") {
     const msg = "ERROR. Please enter valid integer number between 0 and 100 for " + criterion + "!";
     let isValid = true;   
 
-    try {
-        score = Number(score == "" ? "x" : score);
-    } catch (error) {
+    score = Number(score == "" ? "x" : score);
 
+    if (isNaN(score)) {
         isValid = false;
     }
 

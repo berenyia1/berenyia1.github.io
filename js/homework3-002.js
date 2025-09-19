@@ -67,7 +67,7 @@ function totalWeeklyEarnings(totalAmtSold) {
 // This function is called when the form is submitted
 function formSubmitted(event) {
     event.preventDefault(); // Prevents the form from submitting and reloading the page
-    showError(""); // reset output area
+    clearResults(); // reset output area
 
     let item1 = document.getElementById("item1").value;
     let item2 = document.getElementById("item2").value;
@@ -106,6 +106,21 @@ function formSubmitted(event) {
     displayItem("totalSold", totalSold.toFixed(2));
     displayItem("totalEarnings", totalEarnings.toFixed(2));
     
+
+}
+
+function clearResults() {
+    showError('');
+    displayItem("qty1", "");
+    displayItem("qty2", "");
+    displayItem("qty3", "");
+    displayItem("qty4", "");
+    displayItem("total1", "");
+    displayItem("total2", "");
+    displayItem("total3", "");
+    displayItem("total4", "");
+    displayItem("totalSold", "");
+    displayItem("totalEarnings", "");
 
 }
 

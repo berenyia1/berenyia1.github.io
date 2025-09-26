@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Canada College Javascript CIS-114 Class. Homework 4 - Extra Credit.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Antal Berenyi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4 - Extra Credit</title>
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+    <link rel="stylesheet" href="css/cis114.css">
+    <script src="js/homework4-Extra.js" defer></script>
+
+
+
+</head>
+<body>
+    <nav>
+        <ol>
+            <li><a href="Homework4.html"> &larr;Back To Homework 4 Home Page</a></li>
+            <li><a href="Homework4-001.html">Homework 4 - Part One</a></li>
+            <li><a href="Homework4-002.html">Homework 4 - Part Two</a></li>
+        </ol>
+    </nav>
+
+
+    <header>
+        <div class="homework-header-content">
+            <h1>CIS 114 Assignments</h1>
+            <h2>Homework 4 - Functions</h2>
+            <div class="homework-header">
+                <h2>Asterix Square</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Antal Berenyi</h2>
+                <h3>San Mateo College<br> CIS-114 <br> Fall 2025</h3>
+            </div>
+        </div>
+
+        <style>
+            .asterisk-pattern {
+                font-family: monospace;
+                font-size: 20px;
+                line-height: 1.0;
+            }
+
+            .transparent {
+                color: transparent;
+            }
+        </style>
+
+
+    </header>
+
+    <main>
+        Solution to Homework 4 - Extra Credit
+
+        <div class="homework-solution">
+
+            <div id="homework4-Extra">
+
+                <form onsubmit="{ formSubmitted(event); }">
+
+                    <label for="size">Enter size of square to draw (2-10):</label>
+
+                    <input type="number" id="size" required min="2" max="10" step="1" style="width: 4em;" />
+
+                        <input type="submit" value="Submit" /><br /><br />
+                        <input type="reset" name="reset" value="Clear" onclick="showError('');" />
+
+                </form>
+
+                <p></p>
+
+                <div id="output">
+
+                    <div class="asterisk-pattern">
+                        <div>* * * * *</div>
+                        <div>*<span class="transparent"> * * * </span>*</div>
+                        <div>*<span class="transparent"> * * * </span>*</div>
+                        <div>*<span class="transparent"> * * * </span>*</div>
+                        <div>* * * * *</div>
+                    </div>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

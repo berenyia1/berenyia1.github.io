@@ -44,7 +44,7 @@
         <style>
             .asterisk-pattern {
                 font-family: monospace;
-                font-size: 20px;
+                font-size: 30px;
                 line-height: 1.0;
             }
 
@@ -67,28 +67,23 @@
 
                     <label for="size">Enter size of square to draw (2-10):</label>
 
-                    <input type="number" id="size" required min="2" max="10" step="1" style="width: 4em;" />
+                    <input type="number" id="size" required step="1" style="width: 4em;" />
 
-                        <input type="submit" value="Submit" /><br /><br />
-                        <input type="reset" name="reset" value="Clear" onclick="showError('');" />
+                    <input type="submit" value="Submit" /><br /><br />
+                    <input type="reset" name="reset" value="Clear" onclick="showOutput('');" />
 
                 </form>
 
                 <p></p>
 
-                <div id="output">
 
-                    <div class="asterisk-pattern">
-                        <div>* * * * *</div>
-                        <div>*<span class="transparent"> * * * </span>*</div>
-                        <div>*<span class="transparent"> * * * </span>*</div>
-                        <div>*<span class="transparent"> * * * </span>*</div>
-                        <div>* * * * *</div>
+
+                <div class="asterisk-pattern">
+                    <div id="output">
+
                     </div>
-
                 </div>
 
-                
 
             </div>
 

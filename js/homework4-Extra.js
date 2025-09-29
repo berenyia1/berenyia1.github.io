@@ -8,7 +8,7 @@ function formSubmitted(e) {
     size = parseInt(size);
 
     if (isNaN(size) || size < 2 || size > 10) {
-        showOutput("Please enter a valid size between 2 and 10.");
+        showOutput(`<span style="color: red;">Please enter a valid size between 2 and 10.</span>`);
         return;
     }
     showOutput("");
@@ -21,25 +21,25 @@ function topBottomRow(size) {
     let row = "<div>*";
     for (let j = 1; j < size; j++)
         row += " *";
-    row += "</div>";
+    row += "</div>\n";
     return row;
 }
 
 function innerRow(size) {
-    let row = `<div>*<span class="transparent">`;
+    let row = `<div>*`;
 
     for (let j = 2; j < size; j++)
-        row += " *";
-    row += " </span>*</div>";
+        row += " &nbsp;";
+    row += " *</div>\n";
     return row;
 }
 
 
 // generate the square
 // <div>* * * * *</div>
-// <div>*<span class="transparent"> * * * </span>*</div>
-// <div>*<span class="transparent"> * * * </span>*</div>
-// <div>*<span class="transparent"> * * * </span>*</div>
+// <div>*       *</div>
+// <div>*       *</div>
+// <div>*       *</div>
 // <div>* * * * *</div>
 function generateSquare(size) {
     let square = topBottomRow(size);

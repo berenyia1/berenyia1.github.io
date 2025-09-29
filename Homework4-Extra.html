@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="css/cis114.css">
     <script src="js/homework4-Extra.js" defer></script>
 
+    <style>
+        .asterisk-pattern {
+            font-family: monospace;
+            font-size: 30px;
+            line-height: 1.0;
+        }
 
+    </style>
 
 </head>
 <body>
@@ -41,17 +48,7 @@
             </div>
         </div>
 
-        <style>
-            .asterisk-pattern {
-                font-family: monospace;
-                font-size: 30px;
-                line-height: 1.0;
-            }
-
-            .transparent {
-                color: transparent;
-            }
-        </style>
+        
 
 
     </header>
@@ -67,16 +64,14 @@
 
                     <label for="size">Enter size of square to draw (2-10):</label>
 
-                    <input type="number" id="size" required step="1" style="width: 4em;" />
+                    <input type="number" id="size" required step="1" style="width: 4em;" >
 
-                    <input type="submit" value="Submit" /><br /><br />
-                    <input type="reset" name="reset" value="Clear" onclick="showOutput('');" />
+                    <input type="submit" value="Submit"><br><br>
+                    <input type="reset" name="reset" value="Clear" onclick="showOutput('');">
 
                 </form>
 
                 <p></p>
-
-
 
                 <div class="asterisk-pattern">
                     <div id="output">

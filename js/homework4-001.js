@@ -12,7 +12,7 @@ for (let i = 5; i <= 25; i += 4) {
 
     tmp += i;
 }
-outputforSum.innerHTML += " is " + tmp + ".";
+outputforSum.innerHTML += " is " + tmp.toLocaleString() + ".";
 
 tmp = 1;
 let outputforProduct = document.getElementById("homework4-001-forProduct");
@@ -25,7 +25,7 @@ for (let i = 5; i <= 25; i += 4) {
 
     tmp *= i;
 }
-outputforProduct.innerHTML += " is " + tmp + ".";
+outputforProduct.innerHTML += " is " + tmp.toLocaleString() + ".";
 
 let outputwhileSum = document.getElementById("homework4-001-whileSum");
 tmp = 0;
@@ -39,7 +39,7 @@ while (i <= 25) {
     tmp += i;
     i += 4;
 }
-outputwhileSum.innerHTML += " is " + tmp + ".";
+outputwhileSum.innerHTML += " is " + tmp.toLocaleString() + ".";
 
 
 tmp = 1;
@@ -54,5 +54,5 @@ while (i <= 25) {
     tmp *= i;
     i += 4;
 }
-outputwhileProduct.innerHTML += " is " + tmp + ".";
+outputwhileProduct.innerHTML += " is " + tmp.toLocaleString() + ".";
 

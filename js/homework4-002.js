@@ -29,7 +29,7 @@ for (let multiplier = START_MULTIPLIER; multiplier <= END_MULTIPLIER; multiplier
         let tableRow = `<tr>
             <td>${multiplicand}</td>
             <td>${multiplier}</td>
-            <td>${multiplicand * multiplier}</td>
+            <td>${(multiplicand * multiplier).toLocaleString()}</td>
             </tr> `;
 
         HTML += tableRow;

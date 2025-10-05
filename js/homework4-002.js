@@ -26,7 +26,7 @@ for (let multiplier = START_MULTIPLIER; multiplier <= END_MULTIPLIER; multiplier
     /** Inner loop for each row in a table */
     for (let multiplicand = 1; multiplicand <= 9; multiplicand++) {
 
-        let tableRow = `<tr>
+        let tableRow = `<tr class="numeric-display">
             <td>${multiplicand}</td>
             <td>${multiplier}</td>
             <td>${(multiplicand * multiplier).toLocaleString()}</td>

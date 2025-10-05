@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Canada College Javascript CIS-114 Class..">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Antal Berenyi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 4 Excersise 3 </title>
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+    <link rel="stylesheet" href="css/cis114.css">
+
+    <style>
+        .excercise-output {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+        }
+    </style>
+
+    <script defer>
+
+
+        function validateTagtype() {
+            const tagType = document.getElementById('tagType').value;
+
+            const tagNum = parseInt(tagType, 10);
+
+            if (isNaN(tagNum) || tagNum < 1 || tagNum > 3) {
+                return false;
+            }
+            return true;
+        }
+
+        function validateLines() {
+            const lines = document.getElementById('lines').value;
+
+            const linesNum = parseInt(lines, 10);
+
+            if (isNaN(linesNum) || linesNum < 1 || linesNum > 10) {
+                return false;
+            }
+            return true;
+        }
+
+        function getTag(tagType) {
+            switch (tagType) {
+                case '1':
+                    return "Strong";
+                case '2':
+                    return "Emphasize";
+                case '3':
+                    return "Underline";
+                default:
+                    return "";
+            }
+        }
+
+        function wrapTag(tagType, text) {
+            switch (tagType) {
+                case '1':
+                    return `<strong>${text}</strong>`;
+                case '2':
+                    return `<em>${text}</em>`;
+                case '3':
+                    return `<u>${text}</u>`;
+                default:
+                    return text;
+            }
+        }
+
+
+
+        function onSubmitF(event) {
+
+            event.preventDefault(); // Prevent form submission
+            writeOutput(''); // Clear previous output
+            if (!validateTagtype()) {
+                writeOutput("Invalid Tag Type, please modify your numbers");
+                return;
+            }
+
+            if (!validateLines()) {
+                writeOutput("Invalid Line Numbers, please modify your numbers");
+                return;
+            }
+
+            let outputHtml = '';
+            const tagType = document.getElementById('tagType').value;
+
+            outputHtml += `<h2>You selected tag type: ${getTag(tagType)}</h2>`;
+
+            const linesNum = parseInt(document.getElementById('lines').value, 10);
+
+            for (let i = 1; i <= linesNum; i++) {
+                outputHtml += wrapTag(tagType, `Line ${i}`) + '<br>';
+            }
+            writeOutput(outputHtml);
+
+        }
+
+        function writeOutput(htmlText) {
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = htmlText; // Clear previous output
+
+
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    Hello World!
+    <form onsubmit="onSubmitF(event)" class="form-grid">
+        Select a physical tag type: 1 for strong, 2 for emphasize, 3 for underlined:
+        <input type="text" id="tagType" name="tagType" >
+
+
+        Select 1 to 10 lines to write:
+        <input type="text" id="lines" name="linesn"  >
+
+        <input type="submit" value="Submit"  }">
+
+    </form>
+    <p></p>
+    <div class="excercise-output" id="output"></div>
+
+</body>
+</html>

@@ -27,32 +27,35 @@ for (let i = 5; i <= 25; i += 4) {
 }
 outputforProduct.innerHTML += " is " + tmp.toLocaleString() + ".";
 
+/////////////////////////////////////////////////////////////////
+// Now do the same with while loops
+
 let outputwhileSum = document.getElementById("homework4-001-whileSum");
 tmp = 0;
 outputwhileSum.innerHTML = "The result of ";
-let i = 5;
-while (i <= 25) {
+let i = 3;
+while (i <= 18) {
     outputwhileSum.innerHTML += i;
-    if (i < 25) {
+    if (i < 18) {
         outputwhileSum.innerHTML += " + ";
     }    
     tmp += i;
-    i += 4;
+    i += 3;
 }
 outputwhileSum.innerHTML += " is " + tmp.toLocaleString() + ".";
 
 
 tmp = 1;
-i = 5;
+i = 3;
 let outputwhileProduct = document.getElementById("homework4-001-whileProduct");
 outputwhileProduct.innerHTML = "The result of ";
-while (i <= 25) {
+while (i <= 18) {
     outputwhileProduct.innerHTML += i;
-    if (i < 25) {
+    if (i < 18) {
         outputwhileProduct.innerHTML += " * ";
     }    
     tmp *= i;
-    i += 4;
+    i += 3;
 }
 outputwhileProduct.innerHTML += " is " + tmp.toLocaleString() + ".";
 

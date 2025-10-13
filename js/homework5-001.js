@@ -75,7 +75,7 @@ function onSubmitted(event) {
     }
 
 
-    showOutput("Form submitted<br>" + formData.toString()); // reset output area
+    showOutput("Thanks, your data was submitted!<br>" + formData.toString()); // reset output area
 }
 
 function showOutput(output) {

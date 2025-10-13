@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="css/cis114.css">
     <script src="js/homework5-002.js" defer></script>
 
+    <style>
+        .state-info {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
     
 </head>
 
@@ -49,17 +57,23 @@
     <main>
         Solution to Homework 5 - Part Two
         <div class="homework-solution">
-            <h2 style="text-align: left;"> 2004 Census California </h2>
+            <h2 style="text-align: left;"> 2024 Census Data </h2>
 
             <div id="homework5-002">
 
-                a form with an input text box - the user will use that input box to type:
-                either the full name of the state or
-                the two-letter abbreviation of the state <br >
-                a button to submit the data<br>
-                a button to clear the form<br>
-                a textarea inside the form or a different element (div or paragraph) where you will write the output/result
+                <form onsubmit="onSubmitted(event)">
 
+                    <label for="stateInput">
+                        Enter either the full name or the two-letter abbreviation of the state:
+                    </label><br>
+                    <input type="text" id="stateInput" name="stateInput" placeholder="state name or abbr." />
+                    <br><br>
+
+                    <input type="submit" />
+                    <input type="reset" name="reset" value="Clear" onclick="showOutput('');">
+                    <br>
+                </form>
+                <br>
                 <div id="homework5-002-output"></div>
 
             </div>

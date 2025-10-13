@@ -4,9 +4,9 @@ let tableStart = `<table border="1">
     <caption style = "display: none;" > Example of multiplication table</caption >
         <tbody>
         <tr >
-            <th scope="row">Number</th>
-            <th scope="row">Multiplier</th>
-            <th scope="row">Result</th>
+            <th scope="col">Number</th>
+            <th scope="col">Multiplier</th>
+            <th scope="col">Result</th>
         </tr>`;
 
 let tableEnd = `</tbody>

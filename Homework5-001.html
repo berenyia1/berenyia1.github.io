@@ -51,15 +51,55 @@
 
             <h2 style="text-align: left;" > Personal Info </h2 >
             <div id="homework5-001">
-                a form that will contain: <br >
-                an input text box so the user will enter his/her full name<br>
-                a group of radio buttons so the user will select his age group (less than 21; between 21 and 50; older than 50)<br>
-                a group of checkboxes so the user will select the browsers he/she has used (Firefox, Edge, Chrome, Safari)<br>
-                TIP: when building radio buttons and checkboxes in HTML, make sure that the name attribute has the same value to all radio buttons in the group and the same value to all checkboxes in the group but, of course, the id attribute should have a different value for each element<br>
-                a select element or datalist (to produce a drop-down list of choices) so the user will select which type of movie he/she prefers (Action, Comedy, Drama, Documentary, Science Fiction)<br>
-                a button to submit the form<br>
-                a button to clear the form<br>
-                a div or paragraph element that will serve as the output/result area (it can be outside the form)
+
+                <form onsubmit="onSubmitted(event)">
+
+                    <label for="fullName">Full name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" />
+                    <br>
+
+                    <p>Select your Age group:</p>
+                    <input type="radio" id="age1" name="ageGroup" value="30">
+                    <label for="age1">less than 21</label><br>
+
+                    <input type="radio" id="age2" name="ageGroup" value="60">
+                    <label for="age2">between 21 and 50</label><br>
+
+                    <input type="radio" id="age3" name="ageGroup" value="100">
+                    <label for="age3">older than 50</label><br><br>
+
+
+                    <p>Select your preferred browser(s):</p>
+                    <input type="checkbox" id="browser1" name="browser" value="Firefox">
+                    <label for="browser1"> I use Firefox</label><br>
+                    <input type="checkbox" id="browser2" name="browser" value="Edge">
+                    <label for="browser2"> I use Edge</label><br>
+                    <input type="checkbox" id="browser3" name="browser" value="Chrome">
+                    <label for="browser3"> I use Chrome</label><br>
+                    <input type="checkbox" id="browser4" name="browser" value="Safari">
+                    <label for="browser4"> I use Safari</label><br><br>
+
+                    <label for="movie">Select your type of movie:</label>
+                    <select name="movie" id="movie">
+                        <option value="">Select one...</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                    </select>
+                    <br><br>
+
+                    <input type="submit" />
+
+                    <input type="reset" name="reset" value="Clear" onclick="showOutput('');">
+                </form>
+
+                <div id="output">
+
+                </div>
+
+               
                 <div id="homework5-001-output"></div>
 
             </div>
@@ -67,8 +107,6 @@
         </div>
 
         </main >
-
-
 
 
         </body >

@@ -17,7 +17,7 @@ class FormData {
     }
 
     toString() {
-        return `Name: ${this.name}, Age Group: ${this.ageGroup}, Browsers: ${this.browsers.join(", ")}, Movie: ${this.movie}`;
+        return `Name: ${this.name}; Age Group: ${this.ageGroup}; Browsers: ${this.browsers.join(", ")}; Movie: ${this.movie};`;
     }
 
     validate() {

@@ -70,6 +70,7 @@ function onSubmitted(event) {
         newWindow.document.write(`<p>Search character "${formData.charToFind}" not found in the content you typed</p>`);
         newWindow.document.write('<button onclick="window.close()">Close</button>');
         newWindow.document.close();
+        newWindow.focus();
         return;
     }
 

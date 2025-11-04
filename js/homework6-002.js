@@ -2,7 +2,7 @@
  * The user will type whatever content he/she wants in the textarea for the long content, 
  * and the user will also type a single character in the input box you provided. 
  * When the user clicks the submit button, you will:
-
+ * 
 Search for the character the user typed inside the content in the textarea and you will 
 count how many times this character is shown in the big content
 
@@ -26,10 +26,6 @@ class FormData {
         this.charToFind = "";
     }
 
-    toString() {
-        return `Number: ${this.fullText}; Character: ${charToFind}`;
-    }
-
     validate() {
         let errors = [];
 
@@ -41,8 +37,6 @@ class FormData {
             errors.push("Text to search is required.");
         }
 
-
-        
         return errors;
     }
             
@@ -67,8 +61,19 @@ function onSubmitted(event) {
         return;
     }
 
+    const escapedSearchWord = formData.charToFind.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(escapedSearchWord, 'gi');
+    const matches = formData.fullText.match(regex);
+    const count = matches ? matches.length : 0;
+    if (count === 0) {
+        const newWindow = window.open("", "Search Result", "width=300,height=100,left=200,top=200");
+        newWindow.document.write(`<p>Search character "${formData.charToFind}" not found in the content you typed</p>`);
+        newWindow.document.write('<button onclick="window.close()">Close</button>');
+        newWindow.document.close();
+        return;
+    }
 
-    showOutput(`how many times the character X shows up in the content`); 
+    showOutput(`<p>Search character ${formData.charToFind} found ${count} times in the content you typed</p>`); 
 }
 
 function showOutput(output) {

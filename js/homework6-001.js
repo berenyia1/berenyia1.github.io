@@ -33,10 +33,13 @@ TIPS:
 
 */
 
+/**
+ * FormData class to handle user input and validation
+ */
 class FormData {
-    constructor(number) {
-        this.strNumber = number;        
-        this.floatNumber = parseFloat(number);
+    constructor(userInput) {
+        this.strNumber = userInput;        
+        this.floatNumber = strictParseFloat(userInput.trim());
     }
 
     validate() {
@@ -58,6 +61,40 @@ class FormData {
     }            
 }
 
+/* 
+ * Regex for a valid floating-point number (including optional sign and exponent)
+ * Used to strictly validate the input before parsing, because parseFloat is lenient, 
+ * allowing invalid characters after the number.
+*/
+
+function strictParseFloat(str) {
+
+    /*
+    Explanation of the regex:
+        ^           : Asserts the start of the string.
+        [+-]?       : Matches an optional plus or minus sign.
+        (           : Starts a capturing group for the number itself.
+        \d +        : Matches one or more digits(for the integer part).
+        (\.\d *)?   : Optionally matches a decimal point followed by zero or more digits(for the fractional part).
+        |           : OR operator.
+        \.\d +      : Matches a decimal point followed by one or more digits(for cases like ".5").
+        )           : Ends the capturing group.
+        $           : Asserts the end of the string.
+    */
+
+    const floatRegex = /^[+-]?(\d+(\.\d*)?|\.\d+)$/;
+
+    if (!floatRegex.test(str)) {
+        // If the input is not a string or doesn't match the strict float regex,
+        // consider it an invalid input and return NaN.
+        return NaN;
+    }
+
+    // If the regex matches, it's safe to use parseFloat
+    return parseFloat(str);
+}
+
+
 // A. round the floating-point number to the nearest integer
 function roundToNearestInteger(number) {
     return Math.round(number);
@@ -76,7 +113,9 @@ function calculateFixed(number, position) {
 }
 
 
-
+/**
+ * Event handler for form submission
+ */
 function onSubmitted(event) {
     event.preventDefault(); // Prevents the form from submitting and reloading the page
     showOutput("");
@@ -90,8 +129,8 @@ function onSubmitted(event) {
         return;
     }
 
-
-    showOutput(`You typed number: ${formData.number} <br>
+    // display output to user
+    showOutput(`You typed number: ${formData.strNumber} <br>
         Rounded to the nearest integer = ${roundToNearestInteger(formData.floatNumber) } <br>
         Square root rounded to integer = ${calculateSquareRootRounded(formData.floatNumber) } <br>
         Rounded to the nearest 10th position = ${calculateFixed(formData.floatNumber, 1)} <br>
@@ -99,6 +138,7 @@ function onSubmitted(event) {
         Rounded to the nearest 1000th position = ${calculateFixed(formData.floatNumber, 3) } <br>`); 
 }
 
+// Function to write to output component on HTML page.
 function showOutput(output) {
     document.getElementById("homework6-001-output").innerHTML = output;
 }

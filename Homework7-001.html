@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Canada College Javascript CIS-114 Class. Homework 7 - Part one.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Antal Berenyi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 7 Part One</title>
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+    <link rel="stylesheet" href="css/cis114.css">
+    <script src="js/homework7-001.js" defer></script>
+
+    <style>
+        .side-by-side {
+            display: flex; /* Makes the div a flex container */
+            justify-content: space-around; /* Distributes space around items */
+            align-items: flex-start; /* Aligns items to the start of the cross-axis (top) */
+            gap: 20px; /* Adds space between flex items */
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .ss-content {
+            flex: 1; /* Allows items to grow and shrink, taking equal available space */
+            padding: 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <ol>
+            <li> <a href="Homework7.html"> &larr;Back To Homework 7 Home Page</a> </li>
+            <li> <a href="Homework7-002.html"> Homework 7 - Part Two</a> </li>
+        </ol>
+    </nav>
+
+
+
+    <header>
+        <div class="homework-header-content">
+            <h1> Homework 7 - DOM &amp; Cookies</h1>
+            <div class="homework-header">
+                <h2> Part One - DOM</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2> Antal Berenyi</h2>
+                <h3> San Mateo College<br> CIS-114 <br> Fall 2025</h3>
+            </div>
+        </div>
+
+
+    </header>
+
+
+
+    <main>
+        Solution to Homework 7 - Part One
+        <div class="homework-solution">
+
+            <h2 style="text-align: left;"> DOM </h2>
+            <div id="homework7-001" class="side-by-side">
+                <div class="ss-content">
+                    <form onsubmit="onSubmitted(event)">
+
+                        <p> Select background color:</p>
+                        <input type="radio" id="color1" name="bgColorGroup" value="#f2bde8">
+                        <label for="color1"> Baby Barney Purple</label> <br>
+
+                        <input type="radio" id="color2" name="bgColorGroup" value="#bdd9f2">
+                        <label for="color2"> Out of the Blue Blue</label> <br>
+
+                        <input type="radio" id="color3" name="bgColorGroup" value="#c1f2bd">
+                        <label for="color3"> Forgetful Green</label> <br>
+
+                        <input type="radio" id="color4" name="bgColorGroup" value="#f2d6bd">
+                        <label for="color4"> Princess Peach</label> <br> <br>
+
+
+
+
+
+                        <p> Select Font Style:</p>
+                        <input type="checkbox" id="fontStyle1" name="fontStyle" value="Firefox">
+                        <label for="browser1"> Underline</label> <br>
+                        <input type="checkbox" id="fontStyle2" name="fontStyle" value="Edge">
+                        <label for="browser2"> Bold</label> <br>
+                        <input type="checkbox" id="fontStyle3" name="fontStyle" value="Chrome">
+                        <label for="browser3"> Italic</label> <br> <br>
+
+
+                        <label for="fontSize"> Select Font Size:</label>
+                        <select name="fontSize" id="fontSize">
+                            <option value=""> Select one...</option>
+                            <option value="0.5"> Small</option>
+                            <option value="1"> Normal</option>
+                            <option value="1.5"> Big</option>
+                            <option value="3"> HUGE</option>
+                        </select>
+                        <br> <br>
+
+
+                    </form>
+                </div>
+                
+                <div class="ss-content" id="nursery-rhymes">
+                    <p style="border: 1px solid gray;padding:10px;">
+                        <big> This little piggy</big><br><br>
+                        This little piggy went to market, <br>
+                        This little piggy stayed home, <br>
+                        This little piggy had roast beef, <br>
+                        This little piggy had none, <br>
+                        And this little piggy cried "Wee! Wee! Wee!" all the way home.
+                    </p>
+
+                    <p style="border: 1px solid gray;padding:10px;">
+                        <big>Little Miss Muffet</big><br><br>
+                        Little Miss Muffet<br>
+                        Sat on a tuffet, <br>
+                        Eating her curds and whey;<br>
+                        There came a big spider, <br>
+                        Who sat down beside her<br>
+                        And frightened Miss Muffet away.
+                    </p>
+
+                    <p style="border: 1px solid gray;padding:10px;">
+                        <big>Humpty Dumpty</big><br><br>
+                        Humpty Dumpty sat on a wall, <br>
+                        Humpty Dumpty had a great fall.<br>
+                        All the king's horses and all the king's men<br>
+                        Couldn't put Humpty together again.
+                    </p>
+                </div>
+
+                
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+</html>

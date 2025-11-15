@@ -24,7 +24,7 @@
 </head>
 
 
-<body>
+<body onload="showHideFormOnLoad()" >
     <nav>
         <ol>
             <li><a href="Homework7.html"> &larr;Back To Homework 7 Home Page</a></li>
@@ -60,7 +60,7 @@
             
             <div id="homework7-002">
 
-                <form onsubmit="onSubmitted(event)">
+                <form id="cookieForm" onsubmit="onSubmitted(event)" style="display:none;">
 
                     <label for="name">
                         Enter your name:
@@ -76,10 +76,10 @@
 
 
                     <input type="submit">
-                    <input type="reset" name="reset" value="Clear" onclick="showOutput('');">
+                    <input type="reset" name="reset" value="Clear" onclick="writeOutput('');">
                     <br>
                 </form>
-                <br>
+                
                 <div id="homework7-002-output"></div>
 
             </div>

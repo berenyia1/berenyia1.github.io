@@ -1,77 +1,50 @@
-/** 
-*/
+/******* Define Event listener functions for text customization controls ********/
 
-class FormData {
-    constructor() {
-        this.name = "";
-        this.ageGroup = "";
-        this.browsers = [];
-        this.movie = "";
-    }
+// function to set background color of text
+// the color is selected using radio buttons value
+function setBgColor(event) {
+    const bgColor = event.target.value;
+    document.querySelector('#nursery-rhymes').style.backgroundColor = bgColor;
+}
 
-    toString() {
-        return `Name: ${this.name}; Age Group: ${this.ageGroup}; Browsers: ${this.browsers.join(", ")}; Movie: ${this.movie};`;
-    }
+// function to set font style of text
+// the font style is selected using checkboxes value as class names to add/remove
+function setFontStyle(event) {
+    const fontStyle = event.target.value;
+    const nurseryRhymes = document.querySelector('#nursery-rhymes');
 
-    validate() {
-        let errors = [];
-        if (this.name.trim() === "") {
-            errors.push("Name is required.");
-        }
-        if (this.ageGroup === "") {
-            errors.push("Age group is required.");
-        }
-        if (this.browsers.length === 0) {
-            errors.push("At least one browser must be selected.");
-        }
-        if (this.movie === "") {
-            errors.push("A movie type must be selected.");
-        }
-        return errors;
+    if (event.target.checked) {
+        nurseryRhymes.classList.add(fontStyle);
+
+    } else {
+        nurseryRhymes.classList.remove(fontStyle);
     }
-            
+}
+
+// function to set font size of text
+// the font size is selected using dropdown value as em unit
+function setFontSize(event) {
+    const fontSize = event.target.value;
+    if (fontSize) { // if font size is not empty
+        const nurseryRhymes = document.querySelector('#nursery-rhymes');
+        nurseryRhymes.style.fontSize = fontSize + 'em';
+    }
 }
 
 
-function onSubmitted(event) {
-    event.preventDefault(); // Prevents the form from submitting and reloading the page
-    showOutput("");
 
-    const formData = new FormData();
-    const name = document.getElementById("fullName").value;
+/**************** ADD Event Listeners to Elements ************************/
 
-    formData.name = name;
+// add event listenert to radio buttons to set background color
+document.querySelectorAll('input[name="bgColorGroup"]').forEach(radio => {
+    radio.addEventListener('change', (event) => { setBgColor(event); });
+});
 
-    // Get selected radio button
-    const radioButtons = document.querySelectorAll('input[name="ageGroup"]');
-    radioButtons.forEach(radio => {
-        if (radio.checked) {
-            formData.ageGroup = radio.value;
-        }
-    });
+// add event listeners to checkboxes to set font style
+document.querySelectorAll('input[name="fontStyle"]').forEach(cb => {
+    cb.addEventListener('change', (event) => { setFontStyle(event); });
+});
 
-    const checkboxes = document.querySelectorAll('input[name="browser"]');
-    checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-            formData.browsers.push(checkbox.value);
-        }
-    });
-
-
-    const movie = document.getElementById("movie");
-    formData.movie = movie.value;
-
-    const errors = formData.validate();
-    if (errors.length > 0) {
-        showOutput(`<span style="color: red;">${errors.join("<br>")}</span>`);
-        return;
-    }
-
-
-    showOutput("Thanks, your data was submitted!<br>" + formData.toString()); // reset output area
-}
-
-function showOutput(output) {
-    document.getElementById("homework7-001-output").innerHTML = output;
-}
+// add event listener to dropdown to set font size
+document.querySelector('#fontSize').addEventListener('change', (event) => {setFontSize(event);});
 

@@ -28,7 +28,26 @@
             background-color: #f0f0f0;
             border: 1px solid #ddd;
         }
+
+
+        .content-text-underline {
+            text-decoration: underline;
+        }
+
+        .content-font-bold {
+            font-weight: bold;
+        }
+
+        .content-font-italic {
+            font-style: italic;
+        }
+
+
+
+
     </style>
+
+
 
 
 </head>
@@ -85,16 +104,15 @@
                         <label for="color4"> Princess Peach</label> <br> <br>
 
 
-
-
-
                         <p> Select Font Style:</p>
-                        <input type="checkbox" id="fontStyle1" name="fontStyle" value="Firefox">
-                        <label for="browser1"> Underline</label> <br>
-                        <input type="checkbox" id="fontStyle2" name="fontStyle" value="Edge">
-                        <label for="browser2"> Bold</label> <br>
-                        <input type="checkbox" id="fontStyle3" name="fontStyle" value="Chrome">
-                        <label for="browser3"> Italic</label> <br> <br>
+                        <input type="checkbox" id="fontStyle1" name="fontStyle" value="content-text-underline">
+                        <label for="fontStyle1"> Underline</label> <br>
+                        
+                        <input type="checkbox" id="fontStyle2" name="fontStyle" value="content-font-bold">
+                        <label for="fontStyle2"> Bold</label> <br>
+                        
+                        <input type="checkbox" id="fontStyle3" name="fontStyle" value="content-font-italic">
+                        <label for="fontStyle3"> Italic</label> <br> <br>
 
 
                         <label for="fontSize"> Select Font Size:</label>
@@ -148,7 +166,8 @@
         </div>
 
     </main>
-
+    
 
 </body>
+
 </html>

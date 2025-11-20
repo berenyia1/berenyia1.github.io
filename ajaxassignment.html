@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Canada College Javascript CIS-114 Class. Homework 8 - Part one.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Antal Berenyi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 7 Part One</title>
+    <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+    <link rel="stylesheet" href="css/cis114.css">
+
+
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <nav>
+        <ol>
+            <li> <a href="Homework8.html"> &larr;Back To Homework 8 Home Page</a> </li>
+            <li> <a href="Homework8-002.html"> Homework 8 - Part Two</a> </li>
+        </ol>
+    </nav>
+    <header>
+        <div class="homework-header-content">
+            <h1> Homework 8 - AJAX Application</h1>
+
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2> Antal Berenyi</h2>
+                <h3> San Mateo College<br> CIS-114 <br> Fall 2025</h3>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        Solution to Homework 8 - Part One
+        <div class="homework-solution">
+
+            
+            <div id="homework7-001">
+                <button type="button" onclick="loadDoc()">Get CD collection</button>
+                <br><br>
+                <table id="demo"></table>
+                <h2>Explanation of AJAX</h2>
+                <p></p>
+                <!--  Below that heading you will create one or two paragraphs to explain what is happening with the JavaScript, 
+                    AJAX code you see in the .html file - make sure you explain all the AJAX calls - 
+                    you do not need to explain the XML structure-->
+                <p>This page uses AJAX, a JavaScript technique to update parts of the web page content without issuing a full page refresh. </p>
+                <p></p>
+                
+
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+    <script>
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                myFunction(this);
+            }
+            xhttp.open("GET", "cd_catalog.xml");
+            xhttp.send();
+        }
+
+        function myFunction(xml) {
+            const xmlDoc = xml.responseXML;
+            const x = xmlDoc.getElementsByTagName("CD");
+            let table = "<tr><th>Artist</th><th>Title</th></tr>";
+            for (let i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+
+    
+
+</body>
+</html>
